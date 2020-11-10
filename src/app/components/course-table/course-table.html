@@ -1,0 +1,7 @@
+
+<ul class="list-group">
+  <li class="list-group-item">Courses</li>
+  <li class="list-group-item" *ngFor="let course of courses"> <a [routerLink]="['/table/courses', course._id]">
+    <fa-icon [icon]="fafile"></fa-icon>  {{course.title}} </a></li>
+</ul>
+

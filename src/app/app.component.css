@@ -1,0 +1,21 @@
+.bgLeft {
+
+  background-image: linear-gradient(to right, black , white);
+
+
+}
+.bgRight {
+
+  background-image: linear-gradient(to right, white , black);
+
+
+}
+
+.fullHeight {
+  height: 100%;
+
+}
+
+.myContainer {
+  width: 100%;
+}

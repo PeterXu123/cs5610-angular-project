@@ -1,0 +1,8 @@
+
+<ul class="list-group">
+  <li [ngClass]="{'active1': module._id == mid}" class="list-group-item " *ngFor="let module of moduleList">
+    <a class="nod" [ngClass]="{'active1': module._id == mid}" [routerLink]="['/table/courses/' + cid +  '/modules' , module._id]">
+    {{module.moduleTitle}} </a></li>
+</ul>
+
+
