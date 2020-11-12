@@ -1,15 +1,11 @@
 
 
-<ul class="nav nav-tabs nav-fill" *ngIf="mid != undefined && lessons != undefined &&  lessons.length != 0">
+<ul class="nav nav-tabs nav-fill" *ngIf="mid != undefined && lessons != undefined &&  lessons.length != 0 && !spin">
 
   <li role="presentation"  *ngFor="let lesson of lessons"  [ngClass]="{active: lesson._id == lid}">
     <a [ngClass]="{active1: lesson._id == lid}" class="nav-link" [routerLink]="['/table/courses/' + cid +  '/modules' , mid, 'lessons', lesson._id]">{{lesson.lessonTitle}}</a></li>
 </ul>
 
-<h3 *ngIf="mid == undefined">No Module is selected</h3>
-
-<h3 *ngIf="mid != undefined && lessons.length == 0">No Lessons Yet</h3>
-
-
-
-<!--<h1> lessons</h1>-->
+<mat-progress-spinner *ngIf="spin" mode="indeterminate" >
+</mat-progress-spinner>
+<h3 *ngIf="mid != undefined && lessons != undefined && lessons.length == 0 && !spin">No Lessons Yet</h3>

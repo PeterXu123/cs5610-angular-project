@@ -10,7 +10,8 @@ import {ModuleListComponent} from './components/module-list/module-list';
 import {LessonTabsComponent} from './components/lesson-tabs/lesson-tabs';
 import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
 import {routing} from "./app.routing";
-
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -25,7 +26,9 @@ import {routing} from "./app.routing";
     BrowserModule,
     HttpClientModule,
     FontAwesomeModule,
-    routing
+    MatProgressSpinnerModule,
+    routing,
+    BrowserAnimationsModule
 
   ],
   providers: [],
