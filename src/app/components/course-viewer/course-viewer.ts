@@ -19,12 +19,13 @@ export class CourseViewerComponent implements OnInit {
     this.route.params.subscribe((params: Params) => {
       this.cid = params['cid'];
       this.mid = params['mid'];
-      console.log(this.mid)
+      console.log(params)
+      this.courseService.findCourseById(this.cid).subscribe((data: any) => {
+        this.course = data.title;
+      })
+
     })
-    this.courseService.findCourseById(this.cid).subscribe((data: any) => {
-      this.course = data.title;
-    })
-    console.log(this.mid)
+
   }
 
 }
