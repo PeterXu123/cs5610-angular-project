@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {CourseServiceClient} from "../../services/CourseServiceClient";
+import {CourseServiceClient} from '../../services/CourseServiceClient';
 import { faFile } from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'app-course-table-component',
@@ -14,8 +14,9 @@ export class CourseTableComponent implements OnInit {
   ngOnInit(): void {
 
     this.courseService.courses.subscribe((courses) => {
+      console.log(courses)
       this.courses = courses;
-    })
+    });
     this.courseService.findAllCourses();
 
   }

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {CourseServiceClient} from "../../services/CourseServiceClient";
-import {ActivatedRoute, Params} from "@angular/router";
-import {faTimes} from "@fortawesome/free-solid-svg-icons";
+import {CourseServiceClient} from '../../services/CourseServiceClient';
+import {ActivatedRoute, Params} from '@angular/router';
+import {faTimes} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-course-viewer-component',
@@ -9,7 +9,7 @@ import {faTimes} from "@fortawesome/free-solid-svg-icons";
   styleUrls: ['./course-viewer.css']
 })
 export class CourseViewerComponent implements OnInit {
-  course: string
+  course: string;
   cid: string;
   mid: string;
   faTimes = faTimes;
@@ -17,14 +17,15 @@ export class CourseViewerComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.params.subscribe((params: Params) => {
-      this.cid = params['cid'];
-      this.mid = params['mid'];
-      console.log(params)
-      this.courseService.findCourseById(this.cid).subscribe((data: any) => {
-        this.course = data.title;
-      })
+      this.cid = params.cid;
+      this.mid = params.mid;
 
-    })
+      this.courseService.findCourseById(this.cid).subscribe((data: any) => {
+
+        this.course = data.title;
+      });
+
+    });
 
   }
 

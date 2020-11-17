@@ -9,9 +9,14 @@ import {CourseViewerComponent} from './components/course-viewer/course-viewer';
 import {ModuleListComponent} from './components/module-list/module-list';
 import {LessonTabsComponent} from './components/lesson-tabs/lesson-tabs';
 import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
-import {routing} from "./app.routing";
+import {routing} from "./app-routing.module";
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { QuizzesComponent } from './components/quizzes/quizzes.component';
+import { QuizComponent } from './components/quiz/quiz.component';
+import { TrueFalseQuestionComponent } from './components/true-false-question/true-false-question.component';
+import { MultipleChoiceQuestionComponent } from './components/multiple-choice-question/multiple-choice-question.component';
+import {FormsModule} from '@angular/forms';
 
 
 @NgModule({
@@ -21,6 +26,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     CourseViewerComponent,
     ModuleListComponent,
     LessonTabsComponent,
+    QuizzesComponent,
+    QuizComponent,
+    TrueFalseQuestionComponent,
+    MultipleChoiceQuestionComponent,
   ],
   imports: [
     BrowserModule,
@@ -28,7 +37,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FontAwesomeModule,
     MatProgressSpinnerModule,
     routing,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FormsModule
 
   ],
   providers: [],

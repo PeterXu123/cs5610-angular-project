@@ -1,16 +1,15 @@
-import {Injectable} from "@angular/core";
+import {Injectable} from '@angular/core';
 
-import {BehaviorSubject, Subject} from "rxjs";
-import {HttpClient} from "@angular/common/http";
+import {HttpClient} from '@angular/common/http';
 
-@Injectable({providedIn: "root"})
+@Injectable({providedIn: 'root'})
 
 export class ModuleServiceClient {
   url: string;
 
 
   constructor(private http: HttpClient) {
-    this.url = "https://wbdv-generic-server.herokuapp.com/api/kmx";
+    this.url = 'https://wbdv-generic-server.herokuapp.com/api/kmx';
   }
 
 

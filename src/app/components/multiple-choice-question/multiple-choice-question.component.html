@@ -1,0 +1,23 @@
+<h1>{{this.q.title}}</h1>
+<div class="list-group">
+  <ng-container *ngFor="let c of this.q.choices;">
+    <div class="list-group-item" [ngStyle]="{background: getColor(c) }">
+
+      <input type="radio" [disabled]="grading" class="cursor" name="question" [value]="c" [(ngModel)]="answer"/>
+      &nbsp;
+      <label>{{c}}</label>
+      <fa-icon class="float-right green" [icon]="faCheck" *ngIf="c == this.q.correct && grading"></fa-icon>
+      <fa-icon class="float-right red" [icon]="faTimes"
+               *ngIf="c == answer && grading && c !== this.q.correct"></fa-icon>
+    </div>
+  </ng-container>
+
+  <div class="lowerPart">
+    <p>Your answer: {{answer}}</p>
+    <button class="btn btn-success" (click)="grade()">Grade</button>
+    &nbsp;
+    <button class="btn btn-info" (click)="retry()" *ngIf="grading && answer !== this.q.correct">Retry</button>
+  </div>
+
+
+</div>
