@@ -1,11 +1,11 @@
 <h1>{{this.q.title}}</h1>
 <div class="list-group">
-  <ng-container *ngFor="let c of this.choices;">
+  <ng-container *ngFor="let c of this.choices; let index = index">
     <div class="list-group-item" [ngStyle]="{background: getColor(c) }">
 
-      <input type="radio" [disabled]="grading" class="cursor" [name]="q._id" [value]="c" [(ngModel)]="answer"/>
+      <input [id]="index + c + q._id" type="radio" [disabled]="grading" class="cursor" [name]="q._id" [value]="c" [(ngModel)]="answer"/>
       &nbsp;
-      <label>{{c}}</label>
+      <label [for]="index + c + q._id">{{c}}</label>
       <fa-icon class="float-right green" [icon]="faCheck" *ngIf="c == this.q.correct && grading"></fa-icon>
       <fa-icon class="float-right red" [icon]="faTimes"
                *ngIf="c == answer && grading && c !== this.q.correct"></fa-icon>
