@@ -9,13 +9,13 @@
 .list-group-item {
   margin-bottom: 0px;
 }
-li:first-child {
-  border-top:3px solid #ddd;
-}
+/*li:first-child {*/
+/*  border-top:3px solid #ddd;*/
+/*}*/
 
-li:last-child {
-  border-bottom:3px solid #ddd;
-}
+/*li:last-child {*/
+/*  border-bottom:3px solid #ddd;*/
+/*}*/
 
 .round {
   font-size: 14px;
