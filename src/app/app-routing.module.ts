@@ -4,6 +4,7 @@ import {CourseViewerComponent} from './components/course-viewer/course-viewer';
 import {LessonTabsComponent} from './components/lesson-tabs/lesson-tabs';
 import {QuizzesComponent} from './components/quizzes/quizzes.component';
 import {QuizComponent} from './components/quiz/quiz.component';
+import {QuizAttemptComponent} from './components/quiz-attempt/quiz-attempt.component';
 
 const appRouters: Routes = [
   { path: '',   redirectTo: 'table/courses', pathMatch: 'full' },
@@ -15,6 +16,8 @@ const appRouters: Routes = [
   {path: 'courses/:courseId/quizzes', component: QuizzesComponent},
   { path: 'courses/:courseId/quizzes/:quizId',
     component: QuizComponent },
+  { path: 'courses/:courseId/quizzes/:quizId/attempt',
+    component: QuizAttemptComponent },
 
 
   // {path: ':layout/courses/:cid/modules/:mid', component: CourseViewerComponent,

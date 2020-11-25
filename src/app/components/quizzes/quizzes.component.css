@@ -2,6 +2,20 @@
   float: right;
 }
 
+.bold {
+  font-weight: bold;
+}
+
+.list-group-item {
+  margin-bottom: 0px;
+}
+li:first-child {
+  border-top:3px solid #ddd;
+}
+
+li:last-child {
+  border-bottom:3px solid #ddd;
+}
 
 .round {
   font-size: 14px;
@@ -22,4 +36,7 @@
   user-select: none;
   background-image: none;
   border: 1px solid transparent;
+}
+.attempt {
+  margin-left: 5%;
 }

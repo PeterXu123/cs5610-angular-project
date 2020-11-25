@@ -1,0 +1,38 @@
+<div>
+  <h1 [ngStyle]="{fontWeight: 'bold'}">Score: {{attempt.score}}</h1>
+<ul class="list-group">
+  <div class="list-group-item" *ngFor="let answer of attempt.answers">
+    <div [ngSwitch]="answer.type">
+      <div *ngSwitchCase="'TRUE_FALSE'">
+        <h1>{{answer.title}} &nbsp; {{answer}}</h1>
+        <ng-container *ngFor="let choice of answer.choices">
+          <li  class="list-group-item" [ngStyle]="{background: choice === answer.correct ?  '#86d986' :
+           choice === answer.answer && answer.answer !== answer.correct ? '#ecaeae' : 'none'}">
+          <input type="radio"  disabled [checked]="answer.answer === choice">
+          &nbsp;
+          <label>{{choice}}</label>
+            <fa-icon class="float-right green" [icon]="faCheck" *ngIf="choice == answer.correct"></fa-icon>
+            <fa-icon class="float-right red" [icon]="faTimes"
+                     *ngIf="choice == answer.answer && choice !== answer.correct"></fa-icon>
+          </li>
+        </ng-container>
+      </div>
+      <div *ngSwitchCase="'MULTIPLE_CHOICE'">
+        <h1>{{answer.title}}</h1>
+        <ng-container *ngFor="let choice of answer.choices">
+          <li  class="list-group-item" [ngStyle]="{background: choice === answer.correct ?  '#86d986' :
+           choice === answer.answer && answer.answer !== answer.correct ? '#ecaeae' : 'none'}">
+            <input type="radio"  disabled [checked]="answer.answer === choice">
+            &nbsp;
+            <label>{{choice}}</label>
+            <fa-icon class="float-right green" [icon]="faCheck" *ngIf="choice == answer.correct"></fa-icon>
+            <fa-icon class="float-right red" [icon]="faTimes"
+                     *ngIf="choice == answer.answer && choice !== answer.correct"></fa-icon>
+          </li>
+        </ng-container>
+      </div>
+    </div>
+
+  </div>
+</ul>
+</div>

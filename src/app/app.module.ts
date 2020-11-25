@@ -17,6 +17,9 @@ import { QuizComponent } from './components/quiz/quiz.component';
 import { TrueFalseQuestionComponent } from './components/true-false-question/true-false-question.component';
 import { MultipleChoiceQuestionComponent } from './components/multiple-choice-question/multiple-choice-question.component';
 import {FormsModule} from '@angular/forms';
+import { QuizAttemptComponent } from './components/quiz-attempt/quiz-attempt.component';
+import { QuizAttemptChildComponent } from './components/quiz-attempt/quiz-attempt-child/quiz-attempt-child.component';
+
 
 
 @NgModule({
@@ -30,6 +33,9 @@ import {FormsModule} from '@angular/forms';
     QuizComponent,
     TrueFalseQuestionComponent,
     MultipleChoiceQuestionComponent,
+    QuizAttemptComponent,
+    QuizAttemptChildComponent,
+
   ],
   imports: [
     BrowserModule,

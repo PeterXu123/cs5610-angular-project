@@ -1,12 +1,18 @@
 <ul class="list-group">
-  <li *ngFor="let question of questions" class="list-group-item">
+  <li *ngFor="let question of questions; index as i" class="list-group-item">
     <div [ngSwitch]="question.type">
       <app-multiple-choice-question
         [question]="question"
+        (answerChange)="changeAnswer($event, i)"
         *ngSwitchCase="'MULTIPLE_CHOICE'"></app-multiple-choice-question>
       <app-true-false-question
         [question]="question"
+        (answerChange)="changeAnswer($event, i)"
         *ngSwitchCase="'TRUE_FALSE'"></app-true-false-question>
     </div>
   </li>
 </ul>
+
+<button (click)="submitQuiz()">
+  Submit Quiz
+</button>

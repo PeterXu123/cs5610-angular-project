@@ -10,6 +10,16 @@
   float: right;
 }
 
+.list-group-item {
+  margin-bottom: 0px;
+
+}
+
+
+li:nth-child(2) {
+  border-bottom:3px solid #ddd;
+}
+
 
 .red {
   color: red;
